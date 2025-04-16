@@ -17,10 +17,9 @@ Uber_keuze=("Uber Black","Uber Van","Uber X")
 while keuze not in Uber_keuze:
         keuze = input("Maak een keuze uit de tabel. ")
 else:
-    aantal_km = int(input("Hoeveel kilometer reist u? "))
-#while aantal_km not int:
-   # aantal_km = input("Dit is geen geldige invoer. Voer het aantal kilometers in. ")
-#else:
-    prijs=dienst[keuze]*aantal_km
-print(f"De totale prijs van uw reis is €",prijs, "euro.")
+    try :
+        aantal_km = int(input("Hoeveel kilometer reist u? "))
+        prijs = dienst[keuze] * aantal_km
+        print(f"De totale prijs van uw reis is €", prijs, "euro.")
+    except ValueError: print("Dit is geen geldige invoer. Voer het aantal kilometers in. ")
 
