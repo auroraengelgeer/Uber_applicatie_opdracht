@@ -1,3 +1,5 @@
+from enum import nonmember
+
 from prettytable import PrettyTable
 from prettytable import TableStyle
 
@@ -16,10 +18,23 @@ dienst={"Uber Black":2.00,"Uber Van":3.50,"Uber X":1.50}
 Uber_keuze=("Uber Black","Uber Van","Uber X")
 while keuze not in Uber_keuze:
         keuze = input("Maak een keuze uit de tabel. ")
-else:
-    try :
+aantal_km = None
+while not isinstance(aantal_km,int):
+    try:
         aantal_km = int(input("Hoeveel kilometer reist u? "))
-        prijs = dienst[keuze] * aantal_km
-        print(f"De totale prijs van uw reis is €", prijs, "euro.")
-    except ValueError: print("Dit is geen geldige invoer. Voer het aantal kilometers in. ")
+    except:
+        print("Vul een getal in. ")
 
+prijs = dienst[keuze] * aantal_km
+print(f"De totale prijs van uw reis is €", prijs, "euro.")
+
+
+
+   # try :
+    #    aantal_km = int(input("Hoeveel kilometer reist u? "))
+     #   prijs = dienst[keuze] * aantal_km
+      #  print(f"De totale prijs van uw reis is €", prijs, "euro.")
+    #except ValueError:
+     #   aantal_km = int(input("Dit is geen geldige invoer. Voer het aantal kilometers in. "))
+      #  prijs = dienst[keuze] * aantal_km
+       # print(f"De totale prijs van uw reis is €", prijs, "euro.")
